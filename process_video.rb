@@ -1,5 +1,7 @@
 #! /usr/bin/env ruby
 
+# process_video.rb /path/to/directory/of/video/files/
+
 require 'tempfile'
 
 directory = File.expand_path(ARGV[0])

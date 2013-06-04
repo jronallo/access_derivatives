@@ -1,6 +1,6 @@
 #! /usr/bin/env ruby
 
-# wav_to_ogg_mp3.rb /path/to/directory/of/WAV_files
+# process_audio.rb /path/to/directory/of/WAV_files
 # script to convert batch of WAV files to mp3 and ogg
 
 def create_filename_from_orig_filepath_and_extension(filepath, ext)
