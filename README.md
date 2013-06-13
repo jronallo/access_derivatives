@@ -4,6 +4,10 @@ Look at each script for particular help information.
 
 ## Pre-requisites
 
+### Ruby Gems
+
+- slop
+
 ### JP2 processing
 
 - The Kakadu demo applications should be in PATH and LD_LIBRARY_PATH should be set appropriately.
