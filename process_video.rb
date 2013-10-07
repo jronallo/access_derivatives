@@ -12,7 +12,7 @@ unless File.exist?(output_directory)
 end
 
 source_video_files = Dir.glob(File.join(directory, '*.mp4'))
-['*.flv', '*.mov', '*.avi', '*.mkv'].each do |source_extension|
+['*.flv', '*.mov', '*.avi', '*.mkv','*.m4v'].each do |source_extension|
   source_video_files << Dir.glob(File.join(directory, source_extension))
 end
 source_video_files.flatten!.compact!
