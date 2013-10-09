@@ -32,10 +32,10 @@ source_video_files.each do |filepath|
   tempfile.close
   tempfile.unlink
 
-  # -filter:v "scale=640:480"
-  `avconv -i #{filepath} -vcodec libx264 -vprofile baseline -preset slow -b:v 500k -maxrate 500k -bufsize 1000k \
-    -threads 0 -acodec libvo_aacenc -b:a 128k #{temporary_mp4_file}`
-  `qt-faststart #{temporary_mp4_file} #{video_output_filename_mp4}`
+  # -filter:v "scale=640:360"
+  `avconv -i #{filepath} -vcodec libx264 -vprofile baseline -preset slow -b:v 600k -maxrate 600k -bufsize 1200k -qmin 10 -qmax 42\
+    -threads 0 -acodec libvo_aacenc -b:a 128k "#{temporary_mp4_file}"`
+  `qt-faststart "#{temporary_mp4_file}" "#{video_output_filename_mp4}"`
 
   `avconv -i "#{filepath}" -c:v libvpx -cpu-used 0 -b:v 600k -maxrate 600k -bufsize 1200k -qmin 10 -qmax 42 -threads 0 -codec:a libvorbis -b:a 128k "#{video_output_filename_webm}"`
 end
